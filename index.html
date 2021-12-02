@@ -1,19 +1,18 @@
-<!doctype HTML>
 <html>
-<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
-  <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs>
-  	<a-marker type="pattern" patternUrl="https://raw.githubusercontent.com/jeromeetienne/AR.js/master/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt">
-            <a-entity
-                gltf-model='Assets/Haunter.gltf'
-                scale="5 5 5"
-                rotate="90 0 0"
-                position="150 300 -100"
-                >
-            </a-entity>
-  	</a-marker>
-  	<a-entity camera></a-entity>
-    </a-scene>
-  </body>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+  </head>
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene embedded arjs="sourceType: webcam;">
+    <!-- handle marker with your own pattern -->
+    <a-marker type="pattern" patternurl="markers/hiro-m.patt">
+      <a-sphere position="0 0.5 0" radius="0.25" rotation="0 10 0" color="#EF2D5E"></a-sphere>
+    </a-marker>
+    <!-- add a simple camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 </html>
