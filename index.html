@@ -31,9 +31,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-        <a-nft
-            type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+        <a-marker-camera type='pattern' url='https://raw.githubusercontent.com/bongchunjie/WebAR/main/pattern-haunter-gen1.patt'>
             <a-entity
                 gltf-model='Assets/Haunter.gltf'
                 scale="5 5 5"
@@ -41,7 +39,7 @@
                 position="150 300 -100"
                 >
             </a-entity>
-        </a-nft>
+        </a-marker-camera>
 		<a-entity camera></a-entity>
     </a-scene>
 </body>
