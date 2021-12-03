@@ -1,18 +1,44 @@
-<html>
-  <head>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <!-- include ar.js for A-Frame -->
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
+<!-- rawgithack development URL -->
+<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+<body style='margin : 0px; overflow: hidden;'>
+   <!-- minimal loader shown until image descriptors are loaded -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+    <a-scene
+        vr-mode-ui='enabled: false;'
+        renderer="logarithmicDepthBuffer: true;"
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
-  </head>
-<body style="margin : 0px; overflow: hidden;">
-  <a-scene embedded arjs="sourceType: webcam;">
-    <!-- handle marker with your own pattern -->
-    <a-marker type="pattern" url="Assets/Haunter/pattern-haunter-gen1.patt">
-      <a-sphere position="0 0.5 0" radius="0.25" rotation="0 10 0" color="#EF2D5E"></a-sphere>
-    </a-marker>
-    <!-- add a simple camera -->
-    <a-entity camera></a-entity>
-  </a-scene>
+        <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
+        <a-marker id="marker" type="pattern" preset="custom" src="pattern-haunter-gen1.patt" url="pattern-haunter-gen1.patt" emitevents="true" button>
+            <a-entity
+                gltf-model='Assets/Haunter.gltf'
+                scale="5 5 5"
+                rotate="90 0 0"
+                position="150 300 -100"
+                >
+            </a-entity>
+		<a-entity camera></a-entity>
+    </a-scene>
 </body>
-</html>
