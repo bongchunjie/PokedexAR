@@ -8,8 +8,8 @@
   </head>
 
   <body>
-    <a-scene mindar-image="imageTargetSrc: Assets/Mew.mind; maxTrack: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-        <a-assets>
+    <a-scene mindar-image="Assets/Mew.mind; maxTrack: 2" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
         <a-asset-item id="pikachuModel" src="Assets/Pikachu.gltf"></a-asset-item>
         <a-asset-item id="mewModel" src="Assets/Mew.gltf"></a-asset-item>
       </a-assets>
@@ -22,5 +22,6 @@
       <a-entity mindar-image-target="targetIndex: 1">
         <a-gltf-model rotation="0 0 0 " position="2 0 0" scale="1 1 1" src="#mewModel" animation-mixer>
       </a-entity>
+    </a-scene>
   </body>
 </html>
