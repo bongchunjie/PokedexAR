@@ -13,7 +13,6 @@
         <a-asset-item id="gengarModel" src="Assets/Gengar.gltf"></a-asset-item>
         <a-asset-item id="mewModel" src="Assets/Mew.gltf"></a-asset-item>
         <video src="Videos/GOTCHA.mp4" preload="auto" id="GOTCHA" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay muted playsinline></video>
-        <audio id="sound" src="Videos/GOTCHA.mp3" preload="auto"></audio>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -25,7 +24,7 @@
         <a-text value="Psychic" font="Fonts/PixelMplus12-Regular-msdf.json" font-image="Fonts/PixelMplus12-Regular.png" color="#33f095" negate="false" scale="1 1 1" position="-0.4 -0.5 0"></a-text>
         <a-image src="Assets/Psychic.png" width="0.25" height="0.25" position="0 -0.25 0"></a-image>
         <a-video src="#GOTCHA" width="1.6" height="0.9" position="0 -3 -2"></a-video>
-        <a-entity sound="src: #sound"></a-entity>
+        <a-sound src="src: Videos/GOTCHA.mp3" autoplay="true" position="0 2 5"></a-sound>
       </a-entity>
     </a-scene>
   </body>
