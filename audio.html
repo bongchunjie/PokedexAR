@@ -11,9 +11,11 @@
     <a-scene mindar-image="imageTargetSrc: Assets/Pokemon.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-        <a-entity id="pikachu" geometry="primitive: plane" material="color: blue"
-          position="-10 0 0" sound="Videos/Pikachu.mp3; autoplay: true">
-        </a-entity>
+  <a-assets>
+    <audio id="river" src="Videos/Pikachu.mp3" preload="auto"></audio>
+  </a-assets>
+
+  <a-entity mindar-image-target="targetIndex: 0" sound="src: #river"></a-entity>
     </a-scene>
   </body>
 </html>
